@@ -1,6 +1,6 @@
 ﻿# Demo Flow
 
-This document is the demo planning script for the Incident Management System.
+This document is the demo planning script for the Incident Automation Platform.
 
 All mandatory RPA requirements (Drive/email-export source, TXT/PDF/DOCX extraction, 14-day hash duplicate skip, screenshot-on-failure, summary email with totals) are now implemented and safe to demo. The remaining work is recording the actual screenshots and 10-12 minute video.
 

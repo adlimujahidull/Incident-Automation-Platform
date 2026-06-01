@@ -1,6 +1,6 @@
 ﻿# Technical Architecture
 
-This document defines the current and target architecture for the Incident Management System.
+This document defines the current and target architecture for the Incident Automation Platform.
 
 Keep this document aligned with the implemented system.
 

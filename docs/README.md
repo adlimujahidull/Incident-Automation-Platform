@@ -1,4 +1,4 @@
-# Documentation Map
+﻿# Documentation Map
 
 This folder contains the planning and delivery documents for the Incident
 Management System: an AI-enhanced incident reporting and resolution platform.

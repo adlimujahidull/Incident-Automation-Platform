@@ -1,6 +1,6 @@
 ﻿# Product Scope
 
-This document defines an implementation-ready product scope for the Incident Management System: an AI-enhanced incident reporting and resolution platform.
+This document defines an implementation-ready product scope for the Incident Automation Platform: an AI-enhanced incident reporting and resolution platform.
 
 This file answers: what product are we building, what must be visible to users, and what gaps still matter most.
 

@@ -1,4 +1,4 @@
-# Incident Management System
+﻿# Incident Automation Platform
 
 An enterprise-style incident reporting and resolution platform with automated
 document intake, AI-assisted triage, and a role-aware operations dashboard.
