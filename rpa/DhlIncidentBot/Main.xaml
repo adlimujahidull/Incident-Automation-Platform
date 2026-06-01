@@ -1,0 +1,400 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="128">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Net.Http</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Json</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.FlowAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.Text</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics.Telemetry</x:String>
+      <x:String>Microsoft.CodeAnalysis.Operations</x:String>
+      <x:String>Microsoft.CodeAnalysis.Emit</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="128">
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Validation</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.Features</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
+      <AssemblyReference>System.Net.Ping</AssemblyReference>
+      <AssemblyReference>System.Net.Sockets</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="InputFolder" />
+      <Variable x:TypeArguments="x:String" Name="ProcessedFolder" />
+      <Variable x:TypeArguments="x:String" Name="DuplicateFolder" />
+      <Variable x:TypeArguments="x:String" Name="FailedFolder" />
+      <Variable x:TypeArguments="x:String" Name="LogFolder" />
+      <Variable x:TypeArguments="x:String" Name="ApiBaseUrl" />
+      <Variable x:TypeArguments="x:String" Name="SharedSecret" />
+      <Variable x:TypeArguments="x:String" Name="ProcessName" />
+      <Variable x:TypeArguments="x:String" Name="AdminEmail" />
+      <Variable x:TypeArguments="x:String" Name="SmtpHost" />
+      <Variable x:TypeArguments="x:Int32" Name="SmtpPort" />
+      <Variable x:TypeArguments="x:String" Name="SmtpUser" />
+      <Variable x:TypeArguments="x:String" Name="SmtpPassword" />
+      <Variable x:TypeArguments="x:String" Name="SmtpFrom" />
+      <Variable x:TypeArguments="x:Int32" Name="CreatedCount" />
+      <Variable x:TypeArguments="x:Int32" Name="UpdatedCount" />
+      <Variable x:TypeArguments="x:Int32" Name="DuplicateCount" />
+      <Variable x:TypeArguments="x:Int32" Name="FailedCount" />
+      <Variable x:TypeArguments="x:String" Name="RunLogPath" />
+      <Variable x:TypeArguments="x:String" Name="RunSummary" />
+    </Sequence.Variables>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="450,79" sap2010:WorkflowViewState.IdRef="ManualTrigger_2" />
+    <Sequence DisplayName="Initialize configuration" sap:VirtualizedContainerService.HintSize="450,2533" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Set InputFolder" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[InputFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Data\Input"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set ProcessedFolder" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_16">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ProcessedFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Data\Processed"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set DuplicateFolder" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_17">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[DuplicateFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Data\Duplicate"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set FailedFolder" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_18">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[FailedFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Data\Failed"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set LogFolder" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_19">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[LogFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Data\Logs"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set ApiBaseUrl" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_20">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ApiBaseUrl]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["http://localhost:4000"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set SharedSecret" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[SharedSecret]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["change-me-uipath"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set ProcessName" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_22">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ProcessName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["DHL Drive Intake Bot"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set AdminEmail" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_23">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[AdminEmail]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["admin.ops@dhl.local"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set SmtpHost" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_24">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[SmtpHost]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[""]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set SmtpPort" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_25">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[SmtpPort]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[25]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set SmtpFrom" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_26">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[SmtpFrom]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["dhl-incident-bot@dhl.local"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set SmtpUser" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_27">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[SmtpUser]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[""]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set SmtpPassword" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_28">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[SmtpPassword]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[""]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log start" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[String.Format(&quot;DHL Drive Intake Bot starting in {0}&quot;, InputFolder)]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="string _logFolder = LogFolder; string _processName = ProcessName; string _apiBaseUrl = ApiBaseUrl;  Directory.CreateDirectory(InputFolder); Directory.CreateDirectory(ProcessedFolder); Directory.CreateDirectory(DuplicateFolder); Directory.CreateDirectory(FailedFolder); Directory.CreateDirectory(_logFolder);  string runId = DateTime.UtcNow.ToString(&quot;yyyyMMdd-HHmmss&quot;) + &quot;-&quot; + Guid.NewGuid().ToString().Substring(0, 8); string logPath = Path.Combine(_logFolder, &quot;run-&quot; + runId + &quot;.log&quot;); RunLogPath = logPath;  var logBuilder = new System.Text.StringBuilder(); void Log(string line) {     string entry = DateTime.UtcNow.ToString(&quot;o&quot;) + &quot;  &quot; + line;     logBuilder.AppendLine(entry);     System.Console.WriteLine(entry); }  Log(&quot;Run start. Scanning &quot; + InputFolder);  var allowedExtensions = new[] { &quot;.txt&quot;, &quot;.pdf&quot;, &quot;.docx&quot;, &quot;.png&quot;, &quot;.jpg&quot;, &quot;.jpeg&quot; }; var files = System.IO.Directory.GetFiles(InputFolder)     .Where(f =&gt; allowedExtensions.Contains(System.IO.Path.GetExtension(f).ToLowerInvariant()))     .ToArray(); Log(files.Length + &quot; candidate file(s) detected&quot;);  int created = 0; int duplicates = 0; int failed = 0;  var httpHandler = new System.Net.Http.HttpClientHandler(); var httpClient = new System.Net.Http.HttpClient(httpHandler); httpClient.Timeout = System.TimeSpan.FromSeconds(60); httpClient.DefaultRequestHeaders.Add(&quot;x-uipath-key&quot;, SharedSecret);  string ComputeSha256(string filePath) {     using (var stream = System.IO.File.OpenRead(filePath))     using (var sha = System.Security.Cryptography.SHA256.Create())     {         var hash = sha.ComputeHash(stream);         var sb = new System.Text.StringBuilder();         for (int i = 0; i &lt; hash.Length; i++)         {             sb.Append(hash[i].ToString(&quot;x2&quot;));         }         return sb.ToString();     } }  string MoveFileTo(string source, string targetDir) {     string fileName = System.IO.Path.GetFileName(source);     string destination = System.IO.Path.Combine(targetDir, System.DateTime.UtcNow.ToString(&quot;yyyyMMdd-HHmmss&quot;) + &quot;-&quot; + fileName);     System.IO.File.Move(source, destination);     return destination; }  string CaptureScreenshot(string label) {     Log(&quot;Screenshot capture skipped (WinForms not available in InvokeCode context).&quot;);     return null; }  string UploadFile(string filePath, string sourceLabel, string notes) {     using (var content = new System.Net.Http.MultipartFormDataContent())     {         var fileBytes = System.IO.File.ReadAllBytes(filePath);         var byteContent = new System.Net.Http.ByteArrayContent(fileBytes);         string ext2 = System.IO.Path.GetExtension(filePath).ToLowerInvariant();         string mime = ext2 == &quot;.pdf&quot; ? &quot;application/pdf&quot;             : ext2 == &quot;.docx&quot; ? &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;             : ext2 == &quot;.txt&quot; ? &quot;text/plain&quot;             : ext2 == &quot;.png&quot; ? &quot;image/png&quot;             : ext2 == &quot;.jpg&quot; || ext2 == &quot;.jpeg&quot; ? &quot;image/jpeg&quot;             : &quot;application/octet-stream&quot;;         byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(mime);         content.Add(byteContent, &quot;file&quot;, System.IO.Path.GetFileName(filePath));         content.Add(new System.Net.Http.StringContent(&quot;RPA&quot;), &quot;source_type&quot;);         if (!string.IsNullOrEmpty(sourceLabel)) content.Add(new System.Net.Http.StringContent(sourceLabel), &quot;source_label&quot;);         if (!string.IsNullOrEmpty(notes)) content.Add(new System.Net.Http.StringContent(notes), &quot;notes&quot;);         content.Add(new System.Net.Http.StringContent(_processName), &quot;process_name&quot;);         var response = httpClient.PostAsync(_apiBaseUrl + &quot;/api/uipath/uploads&quot;, content).Result;         string body = response.Content.ReadAsStringAsync().Result;         if (!response.IsSuccessStatusCode)         {             throw new System.Exception(&quot;Upload failed (&quot; + (int)response.StatusCode + &quot;): &quot; + body);         }         var match = System.Text.RegularExpressions.Regex.Match(body, &quot;\&quot;id\&quot;\\s*:\\s*\&quot;([^\&quot;]+)\&quot;&quot;);         return match.Success ? match.Groups[1].Value : null;     } }  System.Text.Json.JsonElement Post(string url, string jsonBody) {     var stringContent = new System.Net.Http.StringContent(jsonBody, System.Text.Encoding.UTF8, &quot;application/json&quot;);     var response = httpClient.PostAsync(url, stringContent).Result;     string body = response.Content.ReadAsStringAsync().Result;     if (!response.IsSuccessStatusCode)     {         throw new System.Exception(&quot;POST &quot; + url + &quot; failed (&quot; + (int)response.StatusCode + &quot;): &quot; + body);     }     using (var doc = System.Text.Json.JsonDocument.Parse(body))     {         return doc.RootElement.Clone();     } }  System.Text.Json.JsonElement Patch(string url, string jsonBody) {     var msg = new System.Net.Http.HttpRequestMessage(new System.Net.Http.HttpMethod(&quot;PATCH&quot;), url);     msg.Content = new System.Net.Http.StringContent(jsonBody, System.Text.Encoding.UTF8, &quot;application/json&quot;);     var response = httpClient.SendAsync(msg).Result;     string body = response.Content.ReadAsStringAsync().Result;     if (!response.IsSuccessStatusCode)     {         throw new System.Exception(&quot;PATCH &quot; + url + &quot; failed (&quot; + (int)response.StatusCode + &quot;): &quot; + body);     }     using (var doc = System.Text.Json.JsonDocument.Parse(body))     {         return doc.RootElement.Clone();     } }  string JsonEscape(string raw) {     return System.Text.Json.JsonSerializer.Serialize(raw ?? string.Empty); }  foreach (var file in files) {     string fileName = System.IO.Path.GetFileName(file);     string jobReference = &quot;UIP-&quot; + System.DateTime.UtcNow.ToString(&quot;yyyyMMddHHmmss&quot;) + &quot;-&quot; + System.Guid.NewGuid().ToString().Substring(0, 8);     string contentHash = null;     string lastScreenshotId = null;      try     {         Log(&quot;Processing: &quot; + fileName);         contentHash = ComputeSha256(file);         Log(&quot;Hash: &quot; + contentHash);          string duplicatePayload = &quot;{\&quot;content_hash\&quot;:&quot; + JsonEscape(contentHash) + &quot;,\&quot;source_channel\&quot;:\&quot;FOLDER_WATCHER\&quot;,\&quot;source_reference\&quot;:&quot; + JsonEscape(fileName) + &quot;}&quot;;         var duplicateResult = Post(_apiBaseUrl + &quot;/api/uipath/duplicate-check&quot;, duplicatePayload);         bool isDuplicate = duplicateResult.GetProperty(&quot;duplicate&quot;).GetBoolean();          if (isDuplicate)         {             duplicates++;             string moved = MoveFileTo(file, DuplicateFolder);             Log(&quot;Duplicate within 14-day window. Moved to &quot; + moved);             continue;         }          string attachmentId = UploadFile(file, &quot;Drive intake folder&quot;, &quot;Source evidence uploaded automatically by &quot; + _processName);         Log(&quot;Uploaded attachment id: &quot; + attachmentId);          string extractedText = string.Empty;         try         {             var extractResult = Post(_apiBaseUrl + &quot;/api/uipath/uploads/&quot; + attachmentId + &quot;/extract&quot;, &quot;{}&quot;);             extractedText = extractResult.GetProperty(&quot;extracted_text&quot;).GetString() ?? string.Empty;             Log(&quot;Extracted &quot; + extractedText.Length + &quot; characters via backend&quot;);         }         catch (System.Exception extractEx)         {             Log(&quot;Extraction unavailable for &quot; + fileName + &quot; (&quot; + extractEx.Message + &quot;). Using filename as fallback summary.&quot;);             extractedText = &quot;Customer evidence file received from Drive folder. Source: &quot; + fileName + &quot;. Manual review recommended.&quot;;         }          string intakePayload = &quot;{&quot;             + &quot;\&quot;job_reference\&quot;:&quot; + JsonEscape(jobReference)             + &quot;,\&quot;process_name\&quot;:&quot; + JsonEscape(_processName)             + &quot;,\&quot;source_channel\&quot;:\&quot;FOLDER_WATCHER\&quot;&quot;             + &quot;,\&quot;source_reference\&quot;:&quot; + JsonEscape(fileName)             + &quot;,\&quot;create_incident\&quot;:true&quot;             + &quot;,\&quot;extracted_text\&quot;:&quot; + JsonEscape(extractedText)             + &quot;,\&quot;content_hash\&quot;:&quot; + JsonEscape(contentHash)             + &quot;,\&quot;payload_snapshot\&quot;:{\&quot;attachment_id\&quot;:&quot; + JsonEscape(attachmentId) + &quot;,\&quot;file_name\&quot;:&quot; + JsonEscape(fileName) + &quot;}&quot;             + &quot;}&quot;;          var intakeResult = Post(_apiBaseUrl + &quot;/api/uipath/jobs/intake&quot;, intakePayload);         Log(&quot;Intake accepted for &quot; + fileName);          string callbackPayload = &quot;{\&quot;status\&quot;:\&quot;COMPLETED\&quot;,\&quot;result\&quot;:\&quot;SUCCESS\&quot;,\&quot;summary_report\&quot;:&quot; + JsonEscape(&quot;Created from &quot; + fileName + &quot; via &quot; + _processName) + &quot;}&quot;;         Patch(_apiBaseUrl + &quot;/api/uipath/jobs/&quot; + jobReference + &quot;/status&quot;, callbackPayload);         Log(&quot;Status callback COMPLETED for &quot; + jobReference);          string moved2 = MoveFileTo(file, ProcessedFolder);         Log(&quot;Moved to &quot; + moved2);         created++;     }     catch (System.Exception itemEx)     {         failed++;         Log(&quot;FAILURE for &quot; + fileName + &quot;: &quot; + itemEx.Message);         string shotPath = CaptureScreenshot(jobReference);         try         {             if (shotPath != null &amp;&amp; System.IO.File.Exists(shotPath))             {                 lastScreenshotId = UploadFile(shotPath, &quot;Failure screenshot&quot;, &quot;Captured on bot exception&quot;);                 Log(&quot;Screenshot uploaded id: &quot; + lastScreenshotId);             }         }         catch (System.Exception shotEx)         {             Log(&quot;Screenshot upload failed: &quot; + shotEx.Message);         }          try         {             string failurePayload = &quot;{&quot;                 + &quot;\&quot;job_reference\&quot;:&quot; + JsonEscape(jobReference)                 + &quot;,\&quot;process_name\&quot;:&quot; + JsonEscape(_processName)                 + &quot;,\&quot;source_channel\&quot;:\&quot;FOLDER_WATCHER\&quot;&quot;                 + &quot;,\&quot;source_reference\&quot;:&quot; + JsonEscape(fileName)                 + &quot;,\&quot;create_incident\&quot;:false&quot;                 + &quot;,\&quot;failure_reason\&quot;:&quot; + JsonEscape(itemEx.Message)                 + &quot;,\&quot;screenshot_path\&quot;:&quot; + JsonEscape(lastScreenshotId ?? shotPath ?? string.Empty)                 + (contentHash != null ? &quot;,\&quot;content_hash\&quot;:&quot; + JsonEscape(contentHash) : string.Empty)                 + &quot;}&quot;;             Post(_apiBaseUrl + &quot;/api/uipath/jobs/intake&quot;, failurePayload);              string failureCallback = &quot;{\&quot;status\&quot;:\&quot;FAILED\&quot;,\&quot;result\&quot;:\&quot;FAILED\&quot;,\&quot;failure_reason\&quot;:&quot; + JsonEscape(itemEx.Message) + &quot;,\&quot;screenshot_path\&quot;:&quot; + JsonEscape(lastScreenshotId ?? shotPath ?? string.Empty) + &quot;}&quot;;             Patch(_apiBaseUrl + &quot;/api/uipath/jobs/&quot; + jobReference + &quot;/status&quot;, failureCallback);         }         catch (System.Exception cbEx)         {             Log(&quot;Callback after failure failed: &quot; + cbEx.Message);         }          try         {             MoveFileTo(file, FailedFolder);         }         catch (System.Exception moveEx)         {             Log(&quot;Move-to-failed failed: &quot; + moveEx.Message);         }     } }  Log(&quot;Totals → created=&quot; + created + &quot; duplicates=&quot; + duplicates + &quot; failed=&quot; + failed);  string summaryText = &quot;DHL Incident Bot run report&quot; + System.Environment.NewLine     + &quot;Run id: &quot; + runId + System.Environment.NewLine     + &quot;Process: &quot; + _processName + System.Environment.NewLine     + &quot;Folder: &quot; + InputFolder + System.Environment.NewLine     + &quot;Created: &quot; + created + System.Environment.NewLine     + &quot;Duplicates skipped: &quot; + duplicates + System.Environment.NewLine     + &quot;Failed: &quot; + failed + System.Environment.NewLine     + &quot;Log file: &quot; + logPath;  System.IO.File.WriteAllText(logPath, logBuilder.ToString()); RunSummary = summaryText; CreatedCount = created; UpdatedCount = 0; DuplicateCount = duplicates; FailedCount = failed;  try {     string runSummaryPayload = &quot;{&quot;         + &quot;\&quot;job_reference\&quot;:&quot; + JsonEscape(&quot;RUN-&quot; + runId)         + &quot;,\&quot;process_name\&quot;:&quot; + JsonEscape(_processName)         + &quot;,\&quot;source_channel\&quot;:\&quot;FOLDER_WATCHER\&quot;&quot;         + &quot;,\&quot;totals\&quot;:{\&quot;created\&quot;:&quot; + created + &quot;,\&quot;updated\&quot;:0,\&quot;duplicates\&quot;:&quot; + duplicates + &quot;,\&quot;failed\&quot;:&quot; + failed + &quot;}&quot;         + &quot;,\&quot;summary_report\&quot;:&quot; + JsonEscape(summaryText)         + &quot;,\&quot;log_excerpt\&quot;:&quot; + JsonEscape(logBuilder.ToString().Substring(0, System.Math.Min(logBuilder.Length, 6000)))         + &quot;,\&quot;email_target\&quot;:&quot; + JsonEscape(AdminEmail)         + &quot;,\&quot;finished_at\&quot;:&quot; + JsonEscape(System.DateTime.UtcNow.ToString(&quot;o&quot;))         + &quot;}&quot;;     Post(_apiBaseUrl + &quot;/api/uipath/runs/summary&quot;, runSummaryPayload);     Log(&quot;Run summary recorded with backend.&quot;); } catch (System.Exception summaryEx) {     Log(&quot;Run summary record failed: &quot; + summaryEx.Message); }  if (!string.IsNullOrEmpty(SmtpHost)) {     try     {         using (var smtp = new System.Net.Mail.SmtpClient(SmtpHost, SmtpPort))         {             if (!string.IsNullOrEmpty(SmtpUser))             {                 smtp.Credentials = new System.Net.NetworkCredential(SmtpUser, SmtpPassword);             }             using (var message = new System.Net.Mail.MailMessage(SmtpFrom, AdminEmail))             {                 message.Subject = &quot;[DHL Incident Bot] Run report &quot; + runId;                 message.Body = summaryText + System.Environment.NewLine + System.Environment.NewLine + &quot;Run log attached.&quot;;                 message.Attachments.Add(new System.Net.Mail.Attachment(logPath));                 smtp.Send(message);             }         }         Log(&quot;Summary email sent to &quot; + AdminEmail);     }     catch (System.Exception mailEx)     {         Log(&quot;Summary email send failed: &quot; + mailEx.Message);         System.IO.File.AppendAllText(logPath, System.Environment.NewLine + &quot;[email-failed] &quot; + mailEx.Message);     } } else {     Log(&quot;SmtpHost not configured. Summary recorded server-side only; no email sent.&quot;); }  System.IO.File.WriteAllText(logPath, logBuilder.ToString()); httpClient.Dispose();" DisplayName="Run intake pipeline" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <InOutArgument x:TypeArguments="x:String" x:Key="AdminEmail">[AdminEmail]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="ApiBaseUrl">[ApiBaseUrl]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="CreatedCount">[CreatedCount]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="DuplicateCount">[DuplicateCount]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="DuplicateFolder">[DuplicateFolder]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="FailedCount">[FailedCount]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="FailedFolder">[FailedFolder]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="InputFolder">[InputFolder]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="LogFolder">[LogFolder]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="ProcessedFolder">[ProcessedFolder]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="ProcessName">[ProcessName]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="RunLogPath">[RunLogPath]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="RunSummary">[RunSummary]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="SharedSecret">[SharedSecret]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="SmtpFrom">[SmtpFrom]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="SmtpHost">[SmtpHost]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="SmtpPassword">[SmtpPassword]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="SmtpPort">[SmtpPort]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="SmtpUser">[SmtpUser]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="UpdatedCount">[UpdatedCount]</InOutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Log finish" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;Run finished. Created={0}, Duplicates={1}, Failed={2}. Log file: {3}&quot;, CreatedCount, DuplicateCount, FailedCount, RunLogPath)]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,41 @@
+Subject: Parcel Stuck in Delivery Loop — Incorrect Address Flagged by Driver
+
+Customer: Bumi Raya Construction Sdn Bhd (Corporate Account)
+Contact Person: Encik Zamri bin Othman, Admin Manager
+Tracking: 1Z-DHL-MY-2290448
+Origin: Shah Alam Distribution Centre
+Destination: Precinct 11, Putrajaya — label reads "Jalan P11/3", should be "Jalan P11/13"
+
+Delivery Attempts: 3 times in 2 days (13, 14, 15 May 2026)
+
+Incident Description:
+The parcel has been out for delivery three consecutive times over the past two days but
+has returned to the depot each time without a successful handoff. The assigned driver
+reported on all three attempts that the address "Jalan P11/3, Putrajaya" does not exist
+in the Precinct 11 grid.
+
+The customer contacted DHL customer service on 14 May and was given verbal confirmation
+that the address would be corrected — but a fourth attempt has not been rescheduled
+and the parcel appears back at the Shah Alam depot.
+
+The correct address — confirmed by the customer's admin team — is:
+  Jalan P11/13, Precinct 11, 62300 Putrajaya
+
+The receiving party (Bumi Raya's Putrajaya site office) has confirmed they are available
+for delivery Monday to Friday, 8:00 AM to 5:00 PM.
+
+The shipment contains construction permit documents with a government submission
+deadline of 16 May 2026. Any further delay will cause the customer to miss the
+submission window and face a penalty from the Putrajaya Municipal Council.
+
+Customer Impact:
+- Government permit deadline breach risk: 16 May 2026 (tomorrow)
+- Customer is a long-standing corporate account (since 2015)
+- This is the second address labelling error within one month
+- Customer has requested a formal explanation and process improvement plan
+
+Recommended Action:
+Correct the delivery address in the system immediately. Push an updated label to the
+driver app and schedule confirmed delivery for tomorrow morning before 10 AM.
+Contact the customer to confirm the reschedule. Investigate why previous verbal
+correction did not propagate to the dispatch system.

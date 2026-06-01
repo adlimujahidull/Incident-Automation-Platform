@@ -1,0 +1,16 @@
+{
+  "name": "dhl-incident-bot-email-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Fetches attachments from an IMAP inbox into the UiPath bot's Data/Input folder.",
+  "scripts": {
+    "fetch": "node fetch-email.mjs",
+    "process": "node process-emails.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "imapflow": "^1.0.190",
+    "mailparser": "^3.7.2"
+  }
+}

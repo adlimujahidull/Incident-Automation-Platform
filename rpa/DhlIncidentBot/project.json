@@ -1,0 +1,61 @@
+{
+  "name": "DhlIncidentBot",
+  "projectId": "ee4e5bfb-9181-4db5-89d6-039c8cc8979d",
+  "description": "DHL DAC 3.0 incident intake bot. Monitors a watch folder, extracts text content, and submits structured incidents to the operations platform through the UiPath bridge API.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.OCR.Activities": "[2.4.0]",
+    "UiPath.PDF.Activities": "4.1.0-preview",
+    "UiPath.System.Activities": "25.12.2",
+    "UiPath.WebAPI.Activities": "2.5.0-preview",
+    "UiPath.Word.Activities": "2.5.1"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.10.0.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": false,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "f4e5c7a8-1234-4abc-9def-1234567890ab",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

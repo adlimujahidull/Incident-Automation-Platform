@@ -1,0 +1,217 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String     @id @default(cuid())
+  name               String
+  email              String     @unique
+  password_hash      String
+  role               String
+  department         String?
+  created_at         DateTime   @default(now())
+  updated_at         DateTime   @updatedAt
+  assigned_incidents Incident[] @relation("IncidentAssignment")
+
+  @@index([role])
+  @@map("users")
+}
+
+model Incident {
+  id                  String               @id @default(cuid())
+  incident_code       String               @unique
+  title               String
+  summary             String               @db.Text
+  category            String
+  priority            String
+  status              String
+  source_type         String
+  assigned_department String
+  tags                String[]
+  suggested_action    String?              @db.Text
+  created_by          String
+  assigned_to_user_id String?
+  assigned_to         User?                @relation("IncidentAssignment", fields: [assigned_to_user_id], references: [id], onDelete: SetNull)
+  assigned_at         DateTime?
+  created_at          DateTime             @default(now())
+  updated_at          DateTime             @updatedAt
+  duplicate_of        String?
+  duplicate_parent    Incident?            @relation("IncidentDuplicate", fields: [duplicate_of], references: [id], onDelete: SetNull)
+  duplicate_children  Incident[]           @relation("IncidentDuplicate")
+  attachments         IncidentAttachment[]
+  history             IncidentHistory[]
+  comments            IncidentComment[]
+  ai_analyses         IncidentAiAnalysis[]
+  automation_logs     AutomationLog[]
+  uipath_jobs         UiPathJob[]
+
+  @@index([status])
+  @@index([priority])
+  @@index([assigned_department])
+  @@index([assigned_to_user_id])
+  @@index([created_at])
+  @@map("incidents")
+}
+
+model IncidentAiAnalysis {
+  id                           String   @id @default(cuid())
+  incident_id                  String
+  incident                     Incident @relation(fields: [incident_id], references: [id], onDelete: Cascade)
+  provider                     String
+  model                        String?
+  status                       String
+  title_suggestion             String?
+  summary_suggestion           String?  @db.Text
+  category_suggestion          String?
+  priority_suggestion          String?
+  department_suggestion        String?
+  tags_suggestion              String[]
+  suggested_action_suggestion  String?  @db.Text
+  duplicate_candidate_id       String?
+  duplicate_candidate_code     String?
+  duplicate_candidate_title    String?
+  duplicate_confidence         Float?
+  confidence_score             Float?
+  rationale                    String?  @db.Text
+  prompt_version               String
+  source_snapshot              Json?
+  raw_response                 Json?
+  error_message                String?  @db.Text
+  created_by                   String
+  created_at                   DateTime @default(now())
+  updated_at                   DateTime @updatedAt
+
+  @@index([incident_id])
+  @@index([status])
+  @@index([created_at])
+  @@map("incident_ai_analyses")
+}
+
+model IncidentAttachment {
+  id               String    @id @default(cuid())
+  incident_id      String?
+  incident         Incident? @relation(fields: [incident_id], references: [id], onDelete: SetNull)
+  file_name        String
+  storage_name     String
+  file_path        String
+  file_type        String
+  file_extension   String
+  source_type      String
+  source_label     String?
+  intake_reference String?
+  notes            String?   @db.Text
+  ingestion_status String
+  checksum_sha256  String
+  uploaded_by      String
+  uploaded_at      DateTime  @default(now())
+  linked_at        DateTime?
+  size_bytes       Int
+
+  @@index([incident_id])
+  @@index([ingestion_status])
+  @@index([source_type])
+  @@index([checksum_sha256])
+  @@map("incident_attachments")
+}
+
+model IncidentHistory {
+  id          String   @id @default(cuid())
+  incident_id String
+  incident    Incident @relation(fields: [incident_id], references: [id], onDelete: Cascade)
+  old_status  String?
+  new_status  String?
+  changed_by  String
+  action      String
+  comment     String?  @db.Text
+  changed_at  DateTime @default(now())
+
+  @@index([incident_id])
+  @@index([changed_at])
+  @@map("incident_history")
+}
+
+model IncidentComment {
+  id          String   @id @default(cuid())
+  incident_id String
+  incident    Incident @relation(fields: [incident_id], references: [id], onDelete: Cascade)
+  body        String   @db.Text
+  comment_by  String
+  created_at  DateTime @default(now())
+
+  @@index([incident_id])
+  @@map("incident_comments")
+}
+
+model AutomationLog {
+  id                  String    @id @default(cuid())
+  process_name        String
+  result              String
+  source_system       String    @default("INTERNAL")
+  job_reference       String?
+  event_type          String?
+  error_message       String?   @db.Text
+  screenshot_path     String?
+  retry_attempts      Int       @default(0)
+  payload_snapshot    Json?
+  related_incident_id String?
+  related_incident    Incident? @relation(fields: [related_incident_id], references: [id], onDelete: SetNull)
+  executed_at         DateTime  @default(now())
+  created_at          DateTime  @default(now())
+
+  @@index([result])
+  @@index([source_system])
+  @@index([job_reference])
+  @@index([executed_at])
+  @@index([related_incident_id])
+  @@map("automation_logs")
+}
+
+model ProcessedHash {
+  id               String   @id @default(cuid())
+  content_hash     String
+  source_channel   String
+  source_reference String?
+  process_name     String?
+  job_reference    String?
+  related_incident_id String?
+  result           String   @default("CREATED")
+  processed_at     DateTime @default(now())
+
+  @@index([content_hash])
+  @@index([processed_at])
+  @@index([job_reference])
+  @@map("processed_hashes")
+}
+
+model UiPathJob {
+  id                  String    @id @default(cuid())
+  job_reference       String    @unique
+  process_name        String
+  source_channel      String
+  source_reference    String?
+  status              String
+  payload_snapshot    Json?
+  result_payload      Json?
+  extracted_text      String?   @db.Text
+  summary_report      String?   @db.Text
+  retry_attempts      Int       @default(0)
+  failure_reason      String?   @db.Text
+  screenshot_path     String?
+  related_incident_id String?
+  related_incident    Incident? @relation(fields: [related_incident_id], references: [id], onDelete: SetNull)
+  last_callback_at    DateTime?
+  completed_at        DateTime?
+  created_at          DateTime  @default(now())
+  updated_at          DateTime  @updatedAt
+
+  @@index([status])
+  @@index([source_channel])
+  @@index([related_incident_id])
+  @@index([updated_at])
+  @@map("uipath_jobs")
+}

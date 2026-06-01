@@ -1,0 +1,36 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
+coverage/
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/logs/
+npm-debug.log*
+
+# UiPath Studio local caches
+rpa/**/.local/
+rpa/**/.objects/
+rpa/**/.tmh/
+rpa/**/.entities/
+
+# RPA bot runtime artifacts (keep folder shape via .gitkeep)
+rpa/DhlIncidentBot/Data/Input/*
+!rpa/DhlIncidentBot/Data/Input/.gitkeep
+rpa/DhlIncidentBot/Data/Processed/*
+!rpa/DhlIncidentBot/Data/Processed/.gitkeep
+rpa/DhlIncidentBot/Data/Failed/*
+!rpa/DhlIncidentBot/Data/Failed/.gitkeep
+rpa/DhlIncidentBot/Data/Duplicate/*
+!rpa/DhlIncidentBot/Data/Duplicate/.gitkeep
+rpa/DhlIncidentBot/Data/Logs/*
+!rpa/DhlIncidentBot/Data/Logs/.gitkeep
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+
+# OS
+Thumbs.db

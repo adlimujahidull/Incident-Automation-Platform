@@ -1,0 +1,42 @@
+Subject: High-Value Device Severely Damaged Upon Arrival — Urgent Compensation Request
+
+Customer: Mega Synergy Technologies Sdn Bhd (Corporate Fleet Account)
+Contact Person: Mr. Hafizi Razali, Head of Procurement
+Tracking: 1Z-DHL-MY-8821047
+Origin: KLIA Cargo Hub — International Inbound
+Destination: Kuala Lumpur Technology Park, Block 7
+
+Date Received: 15 May 2026, 09:14 AM
+Priority Flag: HIGH — Corporate Contract SLA Breach
+
+Incident Description:
+A shipment containing three units of high-value industrial measurement devices (total
+declared value: RM 48,000) arrived at the customer's receiving dock this morning with
+visible and severe physical damage. Two out of three units show a completely crushed
+outer carton. Internal foam padding was compressed flat, and both units have cracked
+housing with exposed circuitry.
+
+The third unit appears undamaged externally but has not been powered on yet. Customer
+suspects internal damage due to impact.
+
+Customer stated that the outer shipping pallet was missing its corner guards, and the
+stack marks on the carton indicate the parcel was placed under heavy freight during
+transit — a violation of the fragile handling instructions clearly printed on the label.
+
+Customer Impact:
+- Two units are non-functional and cannot be deployed
+- Project rollout is delayed by an estimated 3 weeks pending replacements
+- Mega Synergy has been a DHL corporate fleet account holder since 2018 (Gold Tier)
+- This is the second damage claim this quarter from this account
+- Customer has explicitly threatened to escalate to the account manager if no response
+  within 24 hours
+
+Evidence Attached:
+- 14 photos taken at receiving dock (timestamped, with driver present)
+- Original delivery manifest with fragile label visible
+- Purchase invoice (RM 48,000 declared)
+
+Recommended Action:
+Open a high-priority compensation investigation. Notify the KLIA Cargo Hub operations
+manager to check pallet loading records for this shipment. Prepare a replacement
+shipment arrangement and contact the customer within the same business day.

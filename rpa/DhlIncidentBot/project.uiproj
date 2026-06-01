@@ -1,0 +1,6 @@
+{
+  "Name": "DhlIncidentBot",
+  "ProjectType": "Process",
+  "Description": "DHL DAC 3.0 incident intake bot. Monitors a watch folder, extracts text content, and submits structured incidents to the operations platform through the UiPath bridge API.",
+  "MainFile": "Main.xaml"
+}

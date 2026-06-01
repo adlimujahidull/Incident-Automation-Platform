@@ -1,0 +1,42 @@
+Subject: CRITICAL — Medical Supplies Delivery Overdue, Hospital Operations at Risk
+
+Customer: Klinik Pakar Utama Sdn Bhd
+Contact Person: Ms. Nurshahida Binti Azman, Logistics Coordinator
+Tracking: 1Z-DHL-MY-5503871
+Origin: Penang Medical Supplies Distributor
+Destination: Hospital Ward Supply Room, Selayang
+
+Date of Expected Delivery: 13 May 2026
+Current Date: 15 May 2026
+Days Overdue: 2 days
+
+URGENT ESCALATION REQUIRED
+
+Incident Description:
+A shipment of sterile surgical consumables and IV fluid sets — originally scheduled
+for delivery on 13 May 2026 — has not arrived at the hospital two full days past the
+committed delivery window.
+
+The tracking portal has shown "In transit — Klang Valley distribution hub" for 48 hours
+with no further movement events. No delivery attempt has been logged, and the assigned
+driver hub has not responded to three phone escalations from the hospital logistics team.
+
+The shipment includes time-sensitive materials:
+- 200 units sterile syringe sets
+- 48 IV fluid bags (Ringer's Lactate, 500ml)
+- 30 boxes surgical wound closure strips
+
+The hospital is operating on emergency backup stock as of this morning and expects to
+run out of IV fluid sets by end of day if the shipment is not received.
+
+Customer Impact:
+- Hospital has escalated internally to the Head of Medical Services
+- Patient care procedures that require these consumables may be deferred
+- Customer holds a Priority Healthcare Contract with DHL (Platinum Tier)
+- Customer has formally requested written SLA breach acknowledgment
+
+Recommended Action:
+Escalate IMMEDIATELY to the Klang Valley hub supervisor. Locate the shipment, confirm
+driver status, and arrange emergency same-day re-delivery. Notify DHL Healthcare Account
+Manager to engage the customer directly. Document all timeline deviations for SLA breach
+reporting.
